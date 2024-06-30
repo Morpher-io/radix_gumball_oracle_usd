@@ -1,0 +1,14 @@
+CALL_FUNCTION
+    Address("package_tdx_2_1pkxvhakr5rjd3lnacnez65m030psa85500t5kp07vpu500ld6qnf8k")
+    "GumballMachine"
+    "instantiate_gumball_machine"
+    20u64
+    Address("component_tdx_2_1cpwpnsyd94yq7fx9p2jlvkj6d4mmq8l0e6zv937xy8sznmzvn7cph8")
+    Address("account_tdx_2_12xmevme9ujzqe3yuyq37ampaa2dw633luw8446gumfycltqe5qty66")
+;
+CALL_METHOD
+    Address("account_tdx_2_12yjryy5c5sk8e73apc8a3uazpar65deeztujsr7ftlfjqnu2ksusaa")
+    "deposit_batch"
+    Expression("ENTIRE_WORKTOP")
+;
+

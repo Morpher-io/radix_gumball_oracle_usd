@@ -1,0 +1,17 @@
+CALL_METHOD
+    # Own account address
+    Address("account_sim1c99hsap4ll34j8nnkac5krmsawxccdhf5xcl8cum8g4qphuxfvuf2p")
+    "lock_fee"
+    Decimal("5000")
+;
+
+# Instantiate package (Oracle/OracleProxy)
+#   published at ${oracle_package} address
+#   with name ${blueprint_name}
+CALL_FUNCTION
+    Address("package_sim1pkwrryw6ujq7h2j37cttjtgr73gqqw2cuy7tdv2cugj2hxwqw8vsnu")
+    "SignatureOracle"
+    "instantiate_with_token"
+    # public key
+    "a7e75af9dd4d868a41ad2f5a5b021d653e31084261724fb40ae2f1b1c31c778d3b9464502d599cf6720723ec5c68b59d"
+;

@@ -1,0 +1,13 @@
+CALL_METHOD
+    # Own account address
+    Address("account_sim1c99hsap4ll34j8nnkac5krmsawxccdhf5xcl8cum8g4qphuxfvuf2p")
+    "lock_fee"
+    Decimal("5000")
+;
+
+CALL_METHOD
+    Address("component_sim1cr9p5h7wletmgk9k3zhqq0uzdf5xgyp6kajp9nhnvu8r5ss6a5ayya")
+    "buy_token_with_signature"
+    "price:123"
+    "a31a77e8bb8e85ed6993d1150916c3e939f92355a2b1bbdd140612668afcf5a7eebb95ce48a63cbde01a22fcbe475bf910791c06d9eccc771b4125a55ab1f8828f3d69e77c76f3b8080c60b3258f0fb69084af2c00d00c9d6f4cfa3dd2270dfa"
+;
