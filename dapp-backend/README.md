@@ -1,15 +1,20 @@
-# express-backend
+# Gumball Dapp Backend
 
-To install dependencies:
+This backend is for the Gumball Example Dapp.
 
-```bash
-bun install
-```
+It contains all the restful elements your Dapp will need.
 
-To run:
+## Run
 
-```bash
-bun run index.ts
-```
+`npm run dev` to start the environment. 
 
-This project was created using `bun init` in bun v1.0.30. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Alternatively with Docker 
+
+`docker build -t dapp .`
+
+then run 
+
+`docker run --rm -it -p 8080:8080 dapp` . 
+
+It's also prepared to run in the cloud with that.
+
