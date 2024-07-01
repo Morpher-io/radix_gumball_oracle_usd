@@ -27,7 +27,7 @@ app.get("/example/getPrice", async (req: Request, res: Response<PriceMessage>, n
         //potentially counterfactual transaction so that a user is not bleeding out 
         //the API. This is up to the DAPP developer.
         const nftId = process.env.STABLECOIN_NFT_ID
-        const currentNonceResponse = await fetch("http://localhost:8080/nonce/" + nftId)
+        const currentNonceResponse = await fetch(process.env.ORACLE_BACKEND_URL+"/nonce/" + nftId)
 
         const nonceJson = await currentNonceResponse.json(); // {nonce: "123"};
 
@@ -36,7 +36,7 @@ app.get("/example/getPrice", async (req: Request, res: Response<PriceMessage>, n
         const signedPriceRequest = await getSignatureOracleRequest(marketId, nonceJson.nonce);
 
         console.log(signedPriceRequest)
-        const signedPriceResponse = await fetch(`http://localhost:8080/price/${marketId}/${signedPriceRequest.nonce}/${signedPriceRequest.publicKeyBLS}/${signedPriceRequest.nftId}/${signedPriceRequest.signature}`);
+        const signedPriceResponse = await fetch(`${process.env.ORACLE_BACKEND_URL}/price/${marketId}/${signedPriceRequest.nonce}/${signedPriceRequest.publicKeyBLS}/${signedPriceRequest.nftId}/${signedPriceRequest.signature}`);
         const signedPrice: PriceMessage = await signedPriceResponse.json();
         console.log(signedPrice);
 
@@ -47,7 +47,8 @@ app.get("/example/getPrice", async (req: Request, res: Response<PriceMessage>, n
 app.get("/example/getTmpPrice", async (req: Request, res: Response<PriceMessage>) => {
     //add some checks if the user really sends the transaction
     //potentially counterfactual transaction so that a user is not bleeding out 
-    //the API. This is up to the DAPP developer.
+    //the API. This is up to the DAPP developer. 
+    //Or get your own feed from Gateio/Binance as a temporary price indicator
 })
 
 function errorHandler(err, req, res, next) {
