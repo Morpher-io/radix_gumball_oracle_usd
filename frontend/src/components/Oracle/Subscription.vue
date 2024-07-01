@@ -4,7 +4,7 @@ import { GatewayProcessor } from '@beaker-tools/typescript-toolkit'
 import { RadixNetwork, type WalletDataStateAccount } from '@radixdlt/radix-dapp-toolkit'
 import { storeToRefs } from 'pinia'
 import { onMounted, ref } from 'vue'
-import { getNonce, getPrice } from '@/axios/prices'
+import { getPrice } from '@/axios/prices'
 import { updatePublicKey } from '@/radix/manifests/updatePublicKey'
 import { buyGumballManifest } from '@/radix/manifests/buy_gumball'
 import { priceMsgToString } from '@/radix/utils'
@@ -110,6 +110,5 @@ onMounted(() => {
         ((totalApiCalls - apiCallsUsed) / totalApiCalls) * 100
       }}% remaining)
     </div>
-    <button v-on:click="makeOracleCall()" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Sample Call</button>
-  </div>
+     </div>
 </template>
