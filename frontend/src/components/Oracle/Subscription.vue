@@ -105,7 +105,7 @@ onMounted(() => {
     </div>
 
     <div>Expires: {{ exires?.toISOString() }}</div>
-    <div>
+    <div v-if="apiCallsUsed && totalApiCalls">
       Usage: {{ apiCallsUsed }} of {{ totalApiCalls }} ({{
         ((totalApiCalls - apiCallsUsed) / totalApiCalls) * 100
       }}% remaining)

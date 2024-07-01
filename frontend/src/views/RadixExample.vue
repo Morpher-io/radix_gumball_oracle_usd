@@ -112,7 +112,7 @@ async function buySubscription() {
 
         <div class="flex flex-col gap-3">
           <div>
-            {{ account.address }}
+            {{ account?.address }}
           </div>
 
           <Subscription
